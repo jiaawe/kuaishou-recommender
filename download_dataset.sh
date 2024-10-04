@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Download the KuaiRec dataset
 wget https://nas.chongminggao.top:4430/datasets/KuaiRec.zip --no-check-certificate
 
