@@ -32,7 +32,7 @@ def main():
         base_url='http://localhost:11434/v1/',
         api_key='ollama',
     )
-    model = 'qwen2.5:3b'
+    model = 'qwen2.5'
 
     rootpath = "KuaiRec 2.0/"
     captions = pd.read_csv(rootpath + "data/kuairec_caption_category.csv", engine='python')
@@ -47,6 +47,18 @@ def main():
 
     tqdm.pandas(desc="Translating category names")
     captions['english_first_level_category_name'] = captions['first_level_category_name'].progress_apply(translate_text)
+    captions.to_csv(rootpath + "data/kuairec_caption_category_translated.csv", index=False)
+
+    tqdm.pandas(desc="Translationg second-level category names")
+    captions['english_second_level_category_name'] = captions['second_level_category_name'].progress_apply(translate_text)
+    captions.to_csv(rootpath + "data/kuairec_caption_category_translated.csv", index=False)
+
+    tqdm.pandas(desc="Translationg third-level category names")
+    captions['english_third_level_category_name'] = captions['third_level_category_name'].progress_apply(translate_text)
+    captions.to_csv(rootpath + "data/kuairec_caption_category_translated.csv", index=False)
+
+    tqdm.pandas(desc="Translating topic tag")
+    captions['english_topic_tag'] = captions['topic_tag'].progress_apply(translate_text)
     captions.to_csv(rootpath + "data/kuairec_caption_category_translated.csv", index=False)
 
     print("Translation completed. Results saved to kuairec_caption_category_translated.csv")
