@@ -1,1 +1,4 @@
 KuaiRec 2.0/
+data/
+data_exports/
+*.csv
