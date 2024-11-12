@@ -21,7 +21,8 @@ def get_ground_truth(ground_truth_df, valid_users, valid_videos, user_watch_hist
     """
     Args:
         ground_truth_df: DataFrame with the ground truth watch ratios.
-        videos_in_train_data: List of video_ids that are present in the training data.
+        valid_users: List of user_ids that are present in the training data.
+        valid_videos: List of video_ids that are present in the training data.
         user_watch_history: Dictionary with user_id as key and a list of video_ids that the user has watched as value.
     
     Returns:
@@ -48,6 +49,7 @@ def get_user_recommendations(prediction_scores, valid_videos, user_watch_history
     """
     Args:
         prediction_scores: DataFrame with the predicted watch_ratios.
+        valid_videos: List of video_ids that are present in the validation data.
         user_watch_history: Dictionary with user_id as key and a list of video_ids that the user has watched as value.
     
     Returns:
@@ -183,6 +185,7 @@ def get_user_distinct_categories_at_k(k, user_id, recommendations, video_data):
         k: The number of recommendations to return.
         user_id: The user for which to get recommendations.
         recommendations: DataFrame containing the scores for all users, sorted by score in descending order.
+        video_data: DataFrame with information about the videos.
         
     Returns:
         The number of distinct categories in the top k recommendations.
@@ -201,6 +204,9 @@ def get_average_distinct_categories_at_k(k, recommendations, ground_truth, video
     Args:
         k: The number of recommendations to return.
         recommendations: DataFrame containing the scores for all users, sorted by score in descending order.
+        ground_truth: DataFrame with the ground truth watch ratios.
+        video_data: DataFrame with information about the videos.
+        by_cluster: Boolean indicating whether to calculate the average number of distinct categories per cluster.
     
     Returns:
         The overall average number of distinct categories in the top k recommendations, and a dictionary with the average number of distinct categories per cluster.
@@ -244,6 +250,8 @@ def get_user_avg_watch_ratio_at_k(k, user_id, recommendations, watch_ratio_colum
         k: The number of recommendations to return.
         user_id: The user for which to get recommendations.
         recommendations: DataFrame containing the scores for all users, sorted by score in descending order.
+        watch_ratio_column: The column name for the watch ratio.
+        ground_truth: DataFrame with the ground truth watch ratios.
         
     Returns:
         The average watch_ratio in the top k recommendations.
@@ -262,10 +270,11 @@ def get_avg_watch_ratio_at_k(k, recommendations, ground_truth, by_cluster = Fals
     Args:
         k: The number of recommendations to return.
         recommendations: DataFrame containing the scores for all users, sorted by score in descending order.
+        ground_truth: DataFrame with the ground truth watch ratios.
         by_cluster: Boolean indicating whether to calculate the average watch_ratio per cluster.
         
     Returns:
-        The overall average watch_ratio in the top k recommendations, and a dictionary with the average predicted_watch_ratio per cluster (if by_cluster is True).
+        The overall average watch_ratio in the top k recommendations, and a dictionary with the average watch_ratio per cluster (if by_cluster is True).
     """
     all_avg_watch_ratios_list = []
 
