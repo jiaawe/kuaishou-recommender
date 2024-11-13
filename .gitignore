@@ -1,4 +1,5 @@
 KuaiRec 2.0/
 data/
 data_exports/
+recommendations/
 *.csv
