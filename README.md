@@ -1,4 +1,4 @@
-# kauishou-recommender
+# Kauishou-Recommender
 [Detailed Project Report](https://docs.google.com/document/d/1OpWq5wbBZ8pNEb03pQTqCD5jQbvm4Bb3A9tuFwu4y5o/edit?tab=t.0#heading=h.xrhzr61o6zn) <br><br>
 Kuaishou, the first short video platform in China, operates in a highly competitive industry with many platforms striving to capture user attention and loyalty. To maintain its leading position, Kuaishou relies on effective recommendation algorithms to personalise user experiences by suggesting content that aligns with individual preferences and viewing habits. This enhances user engagement and retention, as viewers are more likely to stay on the platform when presented with videos that closely match their interests. However, challenges such as rapidly changing user preferences and the vast amount of content available can make it difficult to provide consistently relevant recommendations. Our project addresses these challenges by improving recommendation relevance and personalization.
 
