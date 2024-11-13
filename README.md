@@ -1,5 +1,8 @@
 # Kauishou-Recommender
-[Detailed Project Report](https://docs.google.com/document/d/1OpWq5wbBZ8pNEb03pQTqCD5jQbvm4Bb3A9tuFwu4y5o/edit?tab=t.0#heading=h.xrhzr61o6zn) <br><br>
+[Detailed Project Report](https://docs.google.com/document/d/1OpWq5wbBZ8pNEb03pQTqCD5jQbvm4Bb3A9tuFwu4y5o/edit?tab=t.0#heading=h.xrhzr61o6zn) <br>
+[Dataset Link](https://kuairec.com/) <br><br>
+
+## Abstract
 Kuaishou, the first short video platform in China, operates in a highly competitive industry with many platforms striving to capture user attention and loyalty. To maintain its leading position, Kuaishou relies on effective recommendation algorithms to personalise user experiences by suggesting content that aligns with individual preferences and viewing habits. This enhances user engagement and retention, as viewers are more likely to stay on the platform when presented with videos that closely match their interests. However, challenges such as rapidly changing user preferences and the vast amount of content available can make it difficult to provide consistently relevant recommendations. Our project addresses these challenges by improving recommendation relevance and personalization.
 
 We used the KuaiRec dataset, which holds real-world recommendation logs from the Kuaishou mobile app (Gao et al., 2022). This dataset captures a diverse range of user interactions and video content, allowing us to model and predict user engagement more effectively. By focusing on predicting the watch_ratio, which indicates whether users spend more time watching recommended videos, we align our model with important business goals like increasing revenue, session durations, and daily active users. Our approach involves analysing user behaviour patterns and their interactions with video features to improve the relevance of recommendations. Ultimately, our project aims to increase user engagement and retention, helping Kuaishou succeed in the fast-changing world of video-sharing applications.
@@ -85,6 +88,12 @@ These models are all being evaluated:
 - NCF ONLY (without segmentation)
 - Caption-based model ONLY
 - Hybrid model
+
+## Other files & folders
+- eval_fns.py contains all evaluation metrics, abstracted out for cleaner notebook codes
+- translation_folder contains files used for testing and running LLMs
+- eda folder contains previous files used in mid-term report for EDA of the KuaiRec dataset
+- feature_engineering folder contains previous files used in mid-term report for initial preprocessing and feature engineering/eda of the Kuairec dataset
 
 ## References
 Gao, C., Wang, Y., Ma, X., Wang, M., Feng, X., Jiang, Q., & Yang, X. (2022). KuaiRec: A Fully-observed Dataset and Insights for Evaluating Recommender Systems. arXiv preprint arXiv:2202.10842.
