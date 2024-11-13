@@ -1,4 +1,4 @@
-# Kauishou-Recommender: Video Recommendation System Using the Fully Observed KuaiRec Dataset
+# Kuaishou-Recommender: Video Recommendation System Using the Fully Observed KuaiRec Dataset
 
 [Detailed Project Report](https://docs.google.com/document/d/1OpWq5wbBZ8pNEb03pQTqCD5jQbvm4Bb3A9tuFwu4y5o/edit?tab=t.0#heading=h.xrhzr61o6zn) <br>
 
