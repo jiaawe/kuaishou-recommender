@@ -113,7 +113,7 @@ These models are all being evaluated:
 
 ## Contributors
 
-- Bernardus Khrisna
+- Bernardus Krishna
 - Calvin Septyanto
 - Chen Jia Wei
 - Chong Wai Sheen
