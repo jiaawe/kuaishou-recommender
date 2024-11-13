@@ -1,6 +1,13 @@
 KuaiRec 2.0/
-data/
+data/big_matrix.csv
+data/item_categories.csv 
+data/item_daily_features.csv 
+data/kuairec_caption_category.csv 
+data/small_matrix.csv 
+data/social_network.csv 
+data/user_features.csv
 data_exports/
 recommendations/
-*.csv
 *.pyc
+metrics/
+results/
