@@ -440,19 +440,19 @@ def get_all_metrics(k, ground_truth, recommendations, video_info, threshold, by_
     overall_avg_watch_ratio, cluster_avg_watch_ratio = get_avg_watch_ratio_at_k(k, recommendations, ground_truth, by_cluster)
     avg_precision, avg_recall, avg_f1, cluster_precision, cluster_recall, cluster_f1 = get_precision_recall_f1_at_k(k, recommendations, ground_truth, threshold, by_cluster)
 
-    metrics_df = pd.DataFrame(columns=['cluster', f'NDCG@{k}', f'Distinct Categories @ {k}', f'Avg Watch Ratio @ {k}', f'Avg Precision@{k}', f'Avg Recall@{k}', f'Avg F1@{k}'])
+    metrics_df = pd.DataFrame(columns=['cluster', f'Avg Watch Ratio @ {k}', f'Avg Precision@{k}', f'Avg Recall@{k}', f'Avg F1@{k}', f'Category-Aware NDCG @ {k}', f'Distinct Categories @ {k}'])
     if by_cluster:
         for cluster in recommendations['cluster'].unique():
             metrics_df = pd.concat([
                 metrics_df,
                 pd.DataFrame({
                     'cluster': cluster,
-                    f'NDCG@{k}': cluster_ndcg[cluster],
-                    f'Distinct Categories @ {k}': cluster_distinct_categories[cluster],
                     f'Avg Watch Ratio @ {k}': cluster_avg_watch_ratio[cluster],
                     f'Avg Precision@{k}': cluster_precision[cluster],
                     f'Avg Recall@{k}': cluster_recall[cluster],
-                    f'Avg F1@{k}': cluster_f1[cluster]
+                    f'Avg F1@{k}': cluster_f1[cluster],
+                    f'Category-Aware NDCG @ {k}': cluster_ndcg[cluster],
+                    f'Distinct Categories @ {k}': cluster_distinct_categories[cluster],
                 }, index=[0])
             ])
     metrics_df['cluster'] = metrics_df['cluster'].astype(int)
@@ -462,12 +462,12 @@ def get_all_metrics(k, ground_truth, recommendations, video_info, threshold, by_
         metrics_df,
         pd.DataFrame({
             'cluster': 'Overall',
-            f'NDCG@{k}': overall_ndcg,
-            f'Distinct Categories @ {k}': overall_distinct_categories,
             f'Avg Watch Ratio @ {k}': overall_avg_watch_ratio,
             f'Avg Precision@{k}': avg_precision,
             f'Avg Recall@{k}': avg_recall,
-            f'Avg F1@{k}': avg_f1
+            f'Avg F1@{k}': avg_f1,
+            f'Category-Aware NDCG @ {k}': overall_ndcg,
+            f'Distinct Categories @ {k}': overall_distinct_categories,
         }, index=[0])
     ])
 
