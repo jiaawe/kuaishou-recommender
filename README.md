@@ -119,5 +119,4 @@ These models are all being evaluated:
 - Chong Wai Sheen
 
 ## References
-
 Gao, C., Wang, Y., Ma, X., Wang, M., Feng, X., Jiang, Q., & Yang, X. (2022). KuaiRec: A Fully-observed Dataset and Insights for Evaluating Recommender Systems. arXiv preprint arXiv:2202.10842.
