@@ -8,7 +8,7 @@ def get_user_watch_history(data):
     """
     Args: 
         data: DataFrame of user watch history. Must contain columns 'user_id' and 'video_id'.
-        
+
     Returns:
         A dictionary with user_id as key and a set of video_ids that the user has watched as value.
     """
