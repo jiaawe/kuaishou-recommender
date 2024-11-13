@@ -34,7 +34,7 @@ def main():
     )
     model = 'qwen2.5'
 
-    rootpath = "KuaiRec 2.0/"
+    rootpath = "./"
     captions = pd.read_csv(rootpath + "data/kuairec_caption_category.csv", engine='python')
 
     # Test translation

@@ -3,3 +3,4 @@ data/
 data_exports/
 recommendations/
 *.csv
+*.pyc
